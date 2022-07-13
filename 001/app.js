@@ -1,4 +1,3 @@
-console.log('asdfasdf');
 
 function rand(min, max) {
     min = Math.ceil(min);
@@ -7,5 +6,9 @@ function rand(min, max) {
 };
 
 const arr = [...Array(10)].map(_ => rand(7, 77));
+    console.log(arr);
+// for (let i = 0; i < arr.length; i++){
+//     console.log(arr[i]);
+// }
 
-console.log(arr);
+arr.forEach(n => console.log(n)); // forEach tink tik masyvams
