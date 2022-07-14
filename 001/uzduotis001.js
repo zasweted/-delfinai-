@@ -39,7 +39,8 @@ const a1 = [...Array(1)].map(_ => rand(1, 10));
 const b1 = [...Array(1)].map(_ => rand(1, 10));
 const c1 = [...Array(1)].map(_ => rand(1, 10));
 
-const triangle = a1 + b1 > c1 ? 'galima' : a1 + c1 > b1 ? 'galima' : b1 + c1 > a1 ? 'galima' : 'negalima';
+const triangle = a1 + b1 > c1 && a1 + c1 > b1 && b1 + c1 > a1 ? 'negalima' : 'galima';
+console.log(a1, b1, c1);
 console.log(a1);
 console.log(b1);
 console.log(c1);

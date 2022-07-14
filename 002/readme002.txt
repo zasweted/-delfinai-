@@ -1,0 +1,4 @@
+- forEach()
+- map()
+- sort()
+- filter()
