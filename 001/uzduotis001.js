@@ -84,3 +84,21 @@ console.log(filteredArray);
 const filteredSum = filteredArray.reduce((a, b) => a + b);
 const filteredAvrg = filteredSum / filteredArray.length;
 console.log(filteredAvrg);
+
+console.log('-------------------');
+
+// Įmonė parduoda žvakes po 1 EUR. Perkant daugiau kaip už 1000 EUR taikoma 3 % nuolaida, daugiau kaip už 2000 EUR - 4 % nuolaida. Parašykite skriptą, kuri skaičiuos žvakių kainą ir atspausdintų atsakymą su console.log() kiek žvakių ir kokia kaina perkama. Žvakių kiekį generuokite ​rand()​ funkcija nuo 5 iki 3000.
+
+const zvakes = [...Array(1)].map(_ => rand(5, 3000));
+console.log(zvakes);
+const kaina = 1;
+const nuolaida3 = (3 / 100) * kaina;
+const nuolaida4 = (4 / 100) * kaina;
+const summa = zvakes * kaina;
+const nuolaida = summa <= 1000 ? 'netaikoma' : summa > 1000 || summa <= 3000 ? 3 / 100 * summa : 4 / 100 * summa ;
+const galutineKaina = summa - nuolaida;
+console.log('Perkama:', zvakes, 'zvakiu');
+console.log('1 zvakes kaina:', kaina, 'EUR');
+console.log('Nuolaida:', nuolaida.toFixed(2), 'EUR');
+console.log('Viso moketi:', galutineKaina, 'EUR');
+
