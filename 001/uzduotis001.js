@@ -66,8 +66,21 @@ console.log('-------------------');
 
 const numbers = [...Array(3)].map(_ => rand(-10, 10));
 console.log(numbers);
-// const updatedNumbers = numbers < 0 ? `+${numbers}+` : numbers > 0 ? `-${numbers}-` : numbers === 0 ? `*${numbers}*`: `*${numbers}*`;
-// console.log(updatedNumbers);
-const newNumbers = numbers.forEach(x => x < 0 ? console.log(`+${x}+`) : x > 0 ? console.log(`-${x}-`) : x == 0 ? console.log(`*${x}*`) : console.log());
+
+const newNumbers = numbers.forEach(x => x < 0 ? console.log(`+${x}+`) : x > 0 ? console.log(`-${x}-`) : x == 0 ? console.log(`*${x}*`) : console.log(x));
 
 console.log('-------------------');
+
+// Naudokite funkcija rand(). Sukurkite tris kintamuosius su atsitiktinėm reikšmėm nuo 0 iki 100. Paskaičiuokite jų aritmetinį vidurkį. Ir aritmetinį vidurkį atmetus tas reikšmes, kurios yra mažesnės nei 10 arba didesnės nei 90. Abu vidurkius atspausdinkite su console.log()
+
+const newArr = [...Array(3)].map(_ => rand(0, 100));
+const sum = newArr.reduce((a, b) => a + b);
+const avrg = sum / newArr.length;
+console.log(newArr);
+console.log(avrg);
+
+const filteredArray = newArr.filter(x => x > 10 && x < 90);
+console.log(filteredArray);
+const filteredSum = filteredArray.reduce((a, b) => a + b);
+const filteredAvrg = filteredSum / filteredArray.length;
+console.log(filteredAvrg);
