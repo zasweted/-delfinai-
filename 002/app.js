@@ -41,3 +41,22 @@ console.log('---------FILTER------------');
 const filter = [1, 5, 77].filter(a => console.log(a));
 
 console.log(filter);
+console.clear();
+console.log('---------------------');
+console.log('---------SORT--------');
+
+const namas = [1, 0, 5, 77];
+
+namas.sort((a, b)=> {
+    if(a > b) return 1;
+    if(a < b) return -1;
+    return 0;
+}); // -x (surusioja) +x (nerusioja) 0 (nesvarbu)
+console.log(namas);
+
+console.log('---------------------');
+console.log('--------REDUCE-------');
+
+const arr = [1, 5, 77];
+const newArr = arr.reduce((a, b) => a + b);
+console.log(newArr);

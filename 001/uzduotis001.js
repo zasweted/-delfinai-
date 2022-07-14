@@ -46,6 +46,7 @@ console.log(b1);
 console.log(c1);
 console.log(triangle);
 
+
 console.log('-----4-uzduotis----');
 console.log('-------------------');
 
