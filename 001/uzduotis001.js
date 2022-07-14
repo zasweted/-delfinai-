@@ -63,3 +63,10 @@ console.log('Dvejetu:', twoes.length);
 console.log('-------------------');
 
 // Naudokite funkcija rand(). Atspausdinkite 3 skaičius naudodami console.log() nuo -10 iki 10. Prie skaičių mažesnių už 0 iš abiejų pusių atspauzdinkite “+” simbolius,  didesnių už 0 iš abiejų pusių atspauzdinkite “-” simbolius, o prie 0 “*” simbolius
+
+const numbers = [...Array(1)].map(_ => rand(-10, 10));
+console.log(numbers);
+const updatedNumbers = numbers < 0 ? `+${numbers}+` : numbers > 0 ? `-${numbers}-` : numbers === 0 ? `*${numbers}*`: `*${numbers}*`;
+console.log(updatedNumbers);
+
+console.log('-------------------');
