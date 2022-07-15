@@ -58,8 +58,34 @@ sujungtasMasyvas.forEach((el, idx) => {
     if (idx % 2 == 0) return poriniai.push(el);
     if (idx % 2 !== 0) return neporiniai.push(el)
 });
-console.log('e) Poriniai:', poriniai);    
-console.log('e) Neporiniai:', neporiniai);    
+console.log('f) Poriniai:', poriniai);    
+console.log('f) Neporiniai:', neporiniai);    
 
+const pakeistasPirminisMasyvas = masyvas.map((a, i) => {
+    if(i % 2 == 0 && a > 15) return 0;
+    else return a;
+});
 
+console.log('g) Pirmimnio masyvo elementai su poriniais indexais, kurie > 15, pakeisti i 0:', pakeistasPirminisMasyvas);
 
+const maziausiasIndex = [];
+masyvas.forEach((a, i)=> {
+    if(a > 10){
+        maziausiasIndex.push(i);
+    }
+});
+
+console.log('h) Indexas pirmo elemento kuris > 10 masyve:', maziausiasIndex[0]);
+
+console.log('-----------------------');
+console.log('------3-UZDUOTIS-------');
+// Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, o ilgis 200. Suskaičiuokite kiek yra kiekvienos raidės.
+function kuriamRandomRaide(){
+    const raides = 'ABCD';
+    const randomRaide = raides[Math.floor(Math.random() * raides.length)];
+    return randomRaide;
+
+};
+
+const raidziuMasyvas = [...Array(200)].map(_ => kuriamRandomRaide())
+console.log(raidziuMasyvas);
