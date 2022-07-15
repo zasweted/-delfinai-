@@ -7,8 +7,8 @@ function rand(min, max) {
 console.clear();
 console.log('------1-UZDUOTIS-------');
 // Sugeneruokite masyvą iš 30 elementų (indeksai nuo 0 iki 29), kurių reikšmės yra atsitiktiniai skaičiai nuo 5 iki 25.
- const masyvas = [...Array(30)].map(_ => rand(5, 25));
- console.log(masyvas);
+const masyvas = [...Array(30)].map(_ => rand(5, 25));
+console.log(masyvas);
 console.log('-----------------------');
 console.log('------2-UZDUOTIS-------');
 //  Naudodamiesi 1 uždavinio masyvu:
@@ -44,8 +44,22 @@ console.log('d) Lyginiu indexu suma:', lyginiuIndexuSuma);
 const naujasMasyvas = masyvas.map((a, b) => {
     return a - b
 });
-console.log('d) Naujas masyvas:', naujasMasyvas);
+console.log('d) Naujas masyvas(reiksme - indexas):', naujasMasyvas);
 
-const papildytasMasyvas = 
+const antrasMasyvas = [...Array(10)].map(_ => rand(5, 25));
+
+const sujungtasMasyvas = masyvas.concat(antrasMasyvas);
+console.log('e)Masyvas papilditas 10 elementu:', sujungtasMasyvas);
+
+const poriniai = [];
+const neporiniai = [];
+
+sujungtasMasyvas.forEach((el, idx) => {
+    if (idx % 2 == 0) return poriniai.push(el);
+    if (idx % 2 !== 0) return neporiniai.push(el)
+});
+console.log('e) Poriniai:', poriniai);    
+console.log('e) Neporiniai:', neporiniai);    
+
 
 
