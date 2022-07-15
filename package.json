@@ -1,0 +1,24 @@
+{
+  "name": "-delfinai-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "uzduotis001": "nodemon ./js/uzduotis001.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zasweted/-delfinai-.git"
+  },
+  "keywords": [],
+  "author": "Aleksandr Vasiljev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zasweted/-delfinai-/issues"
+  },
+  "homepage": "https://github.com/zasweted/-delfinai-#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}

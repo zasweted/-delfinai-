@@ -1,12 +1,12 @@
-console.log('-----1-uzduotis----');
-console.log('-------------------');
-// Naudokite funkcija rand(). Sukurkite du kintamuosius ir naudodamiesi funkcija rand() jiems priskirkite atsitiktines reikšmes nuo 0 iki 4. Didesnę reikšmę padalinkite iš mažesnės. Atspausdinkite rezultatą naudodami console.log()
-
 function rand(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1) + min)
 };
+console.log('-----1-uzduotis----');
+console.log('-------------------');
+// Naudokite funkcija rand(). Sukurkite du kintamuosius ir naudodamiesi funkcija rand() jiems priskirkite atsitiktines reikšmes nuo 0 iki 4. Didesnę reikšmę padalinkite iš mažesnės. Atspausdinkite rezultatą naudodami console.log()
+
 
 const a = [...Array(1)].map(_ => rand(0, 4));
 const b = [...Array(1)].map(_ => rand(0, 4));
@@ -39,13 +39,12 @@ const a1 = [...Array(1)].map(_ => rand(1, 10));
 const b1 = [...Array(1)].map(_ => rand(1, 10));
 const c1 = [...Array(1)].map(_ => rand(1, 10));
 
-const triangle = a1 + b1 > c1 && a1 + c1 > b1 && b1 + c1 > a1 ? 'negalima' : 'galima';
+const triangle = a1 + b1 > c1 && a1 + c1 > b1 ? 'galima : negalima' || b1 + c1 > a1 ? 'galima' : 'negalima':
 console.log(a1, b1, c1);
 console.log(a1);
 console.log(b1);
 console.log(c1);
 console.log(triangle);
-
 
 console.log('-----4-uzduotis----');
 console.log('-------------------');
@@ -86,7 +85,6 @@ console.log('-------------------');
 // Įmonė parduoda žvakes po 1 EUR. Perkant daugiau kaip už 1000 EUR taikoma 3 % nuolaida, daugiau kaip už 2000 EUR - 4 % nuolaida. Parašykite skriptą, kuri skaičiuos žvakių kainą ir atspausdintų atsakymą su console.log() kiek žvakių ir kokia kaina perkama. Žvakių kiekį generuokite ​rand()​ funkcija nuo 5 iki 3000.
 
 const zvakes = [...Array(1)].map(_ => rand(5, 3000));
-console.log(zvakes);
 const kaina = 1;
 const nuolaida3 = (3 / 100) * kaina;
 const nuolaida4 = (4 / 100) * kaina;
