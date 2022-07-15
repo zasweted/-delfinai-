@@ -41,9 +41,7 @@ const lyginiaiIndexai =  masyvas.map((a, i) => {
 const lyginiuIndexuSuma = lyginiaiIndexai.reduce((a, b)=> a + b);
 console.log('d) Lyginiu indexu suma:', lyginiuIndexuSuma);
 
-const naujasMasyvas = masyvas.map((a, b) => {
-    return a - b
-});
+const naujasMasyvas = masyvas.map((a, b) => a - b);
 console.log('d) Naujas masyvas(reiksme - indexas):', naujasMasyvas);
 
 const antrasMasyvas = [...Array(10)].map(_ => rand(5, 25));
@@ -89,3 +87,36 @@ function kuriamRandomRaide(){
 
 const raidziuMasyvas = [...Array(200)].map(_ => kuriamRandomRaide())
 console.log(raidziuMasyvas);
+
+const a = [];
+const b = [];
+const c = [];
+const d = [];
+
+raidziuMasyvas.filter(x => {
+    if(x == 'A') return a.push(x);
+    if(x == 'B') return b.push(x);
+    if(x == 'C') return c.push(x);
+    if(x == 'D') return d.push(x);
+});
+console.log('A raidziu kiekis:', a.length);
+console.log('B raidziu kiekis:', b.length);
+console.log('C raidziu kiekis:', c.length);
+console.log('D raidziu kiekis:', d.length);
+
+// Sugeneruokite 3 masyvus pagal 3 uždavinio sąlygą. Sudėkite masyvus, sudėdami atitinkamas reikšmes. Paskaičiuokite kiek unikalių (po vieną, nesikartojančių) reikšmių ir kiek unikalių kombinacijų gavote.
+
+const array1 = [...Array(200)].map(_ => kuriamRandomRaide());
+const array2 = [...Array(200)].map(_ => kuriamRandomRaide());
+const array3 = [...Array(200)].map(_ => kuriamRandomRaide());
+
+
+const array4 = [];
+for(let i = 0; i < 200; i++){
+    array4.push(array1[i] + array2[i] + array3[i]);
+};
+
+console.log(array4);
+
+const array5 = new Set(array4)
+console.log(array5);
