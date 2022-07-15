@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "uzduotis001": "nodemon ./js/uzduotis001.js",
+    "dev": "nodemon",
+    "uzduotis001": "nodemon ./001/uzduotis001.js",
+    "uzduotis002": "nodemon ./002/uzduotis002.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
