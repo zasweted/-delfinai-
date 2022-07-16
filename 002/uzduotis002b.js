@@ -168,11 +168,19 @@ console.log('------16-UZDUOTIS-------');
 console.log('Popieriniu pinigu skyrius:', pinigineNew[1].reduce((a, b)=> a + b));
 
 const pilnaPinigine = pinigineNew[1].reduce((a, b) => a + b);
-
-do {
-    pinigineNew[1].push(rand(3, 10))
-}while (pilnaPinigine < 500)
 console.log(pilnaPinigine);
+
+
+
+console.log('------------------------');
+console.log('------17-UZDUOTIS-------');
+//17. Patikrinti ar ką nors laimėjote. Bilieto numerius dalinkite iš 777 ir jeigu numeris išsidalins be liekanos - jūs laimėjote! Suskaičiuokite, kiek buvo laimingų bilietų.
+
+
+console.log('------------------------');
+console.log('------18-UZDUOTIS-------');
+//18. Sukurkite penktą skyrelį ir į jį sudėkite nuotraukas: ['šuo', 'katė', 'automobilis', 'namas', 'kiemas'] ir jas išrūšiuokite pagal žodžių ilgį taip, kad pirma eitų trumpiausi žodžiai;
+
 
 
     
