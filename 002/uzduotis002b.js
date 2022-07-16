@@ -176,10 +176,22 @@ console.log('------------------------');
 console.log('------17-UZDUOTIS-------');
 //17. Patikrinti ar ką nors laimėjote. Bilieto numerius dalinkite iš 777 ir jeigu numeris išsidalins be liekanos - jūs laimėjote! Suskaičiuokite, kiek buvo laimingų bilietų.
 
+const luckyTicket = pinigineNew[3].filter(a => {
+    if(a % 777 == 0) return a;
+});
+console.log('Laimingu bilietu:', luckyTicket.length, luckyTicket);
+
 
 console.log('------------------------');
 console.log('------18-UZDUOTIS-------');
 //18. Sukurkite penktą skyrelį ir į jį sudėkite nuotraukas: ['šuo', 'katė', 'automobilis', 'namas', 'kiemas'] ir jas išrūšiuokite pagal žodžių ilgį taip, kad pirma eitų trumpiausi žodžiai;
+
+pinigineNew.push(['šuo', 'katė', 'automobilis', 'namas', 'kiemas']);
+console.log('Isrusiota pagal zodziu ilgi:', pinigineNew[4].sort((a, b) => {
+    if(a.length > b.length) return 1;
+    if(a.length < b.length) return -1;
+}));
+console.log('------------------------');
 
 
 
