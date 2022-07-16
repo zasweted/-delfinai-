@@ -104,6 +104,9 @@ console.log('B raidziu kiekis:', b.length);
 console.log('C raidziu kiekis:', c.length);
 console.log('D raidziu kiekis:', d.length);
 
+console.log('-----------------------');
+console.log('------4-UZDUOTIS-------');
+
 // Sugeneruokite 3 masyvus pagal 3 uždavinio sąlygą. Sudėkite masyvus, sudėdami atitinkamas reikšmes. Paskaičiuokite kiek unikalių (po vieną, nesikartojančių) reikšmių ir kiek unikalių kombinacijų gavote.
 
 const array1 = [...Array(200)].map(_ => kuriamRandomRaide());
@@ -112,7 +115,7 @@ const array3 = [...Array(200)].map(_ => kuriamRandomRaide());
 
 
 const array4 = [];
-for(let i = 0; i < 200; i++){
+for(let i = 0; i < 200; i++){ //paklaust kodel!!
     array4.push(array1[i] + array2[i] + array3[i]);
 };
 
@@ -120,3 +123,47 @@ console.log(array4);
 
 const array5 = new Set(array4)
 console.log(array5);
+
+console.log('-----------------------');
+console.log('------5-UZDUOTIS-------');
+// 5. Sugeneruokite du masyvus, kurių reikšmės yra atsitiktiniai skaičiai nuo 100 iki 999. Masyvų ilgiai 100. Masyvų reikšmės turi būti unikalios savo masyve (t.y. neturi kartotis).
+const unikalusMasyvas1 = [];
+while (unikalusMasyvas1.length < 100) {
+  const x = rand(100, 999)
+  if (unikalusMasyvas1.indexOf(x) === -1) {
+    unikalusMasyvas1.push(x);
+  }
+};
+console.log('Ilgis:', unikalusMasyvas1.length);
+console.log(unikalusMasyvas1);
+
+const unikalusMasyvas2 = [];
+while (unikalusMasyvas2.length < 100) {
+    const y = rand(100, 999)
+    if (unikalusMasyvas2.indexOf(y) === -1) {
+        unikalusMasyvas2.push(y);
+    }
+};
+console.log('Ilgis:', unikalusMasyvas2.length);
+console.log(unikalusMasyvas2);
+
+console.log('-----------------------');
+console.log('------6-UZDUOTIS-------');
+
+//6. Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, kurios yra pirmame 5 uždavinio masyve, bet nėra antrame 5 uždavinio masyve.
+
+const uniqArr1 = unikalusMasyvas1.sort((a, b) => a - b); //sort nebutinas
+const uniqArr2 = unikalusMasyvas2.sort((a, b) => a - b);
+console.log(uniqArr1);
+console.log(uniqArr2);
+
+const newUniqArr = uniqArr1.filter(a => uniqArr2.indexOf(a) === -1); // kodel taip veikia??
+console.log('Naujas masyvas:', newUniqArr.length, newUniqArr);
+
+console.log('-----------------------');
+console.log('------7-UZDUOTIS-------');
+
+//7. Sugeneruokite masyvą iš elementų, kurie kartojasi abiejuose 5 uždavinio masyvuose.
+
+const newUniqArr2 = uniqArr1.filter(a => uniqArr2.indexOf(a) !== -1); // kodel taip veikia??
+console.log('Naujas masyvas:', newUniqArr2.length, newUniqArr2);
