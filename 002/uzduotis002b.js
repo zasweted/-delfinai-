@@ -5,6 +5,13 @@ function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
+function kuriamKorteles(){
+    const raides = ['MasterCard Visa', 'Visa'];
+    const randomRaide = raides[Math.floor(Math.random() * raides.length)];
+    return randomRaide;
+
+};
+
 console.log('-----------------------');
 console.log('------1-UZDUOTIS-------');
 //1. Sukurti masyvą (piniginę), kurio ilgis yra atsitiktinis nuo 10 iki 30, o reikšmės atsitiktiniai skaičiai nuo 0 iki 10 (pinigai);
@@ -87,3 +94,38 @@ pinigine.forEach(a => {
 console.log('Kupiuros:', kupiuros.length, kupiuros);
 console.log('Monetos:', monetos.length, monetos);
 
+console.log('-----------------------');
+console.log('------9-UZDUOTIS-------');
+//9. Sukurti masyvą (piniginę su dviem skyreliais) iš dviejų elementų, kurio pirmas elementas būtų masyvas iš 8 uždavinio su monetom, o antras elementas masyvas iš 8 uždavinio su popieriniais pinigais;
+
+const pinigineNew = [];
+pinigineNew.push(monetos, kupiuros);
+console.log(pinigineNew);
+
+console.log('-----------------------');
+console.log('------10-UZDUOTIS-------');
+//10. Į 9 uždavinio masyvą, piniginę su dviem skyreliais, pridėti trečią skyrelį- masyvą su kortelėm: ['KIKA', 'Euro Vaistinė', 'Drogas', 'Ačiū', 'Lietuvos Geležinkeliai', 'Mano RIMI'];
+
+const korteles = ['KIKA', 'Euro Vaistinė', 'Drogas', 'Ačių', 'Lietuvos Geležinkeliai', 'Mano RIMI'];
+pinigineNew.push(korteles);
+console.log(pinigineNew);
+
+
+console.log('-----------------------');
+console.log('------11-UZDUOTIS-------');
+
+//11. Korteles skyrelyje sudėlioti (išrūšiuoti) pagal abėcėlę;
+pinigineNew[2].sort((a, b) =>{
+    if(a > b) return 1;
+    if(a < b) return -1;
+} );
+console.log('Korteles surusiotos pagal abecele:', pinigineNew[2]);
+
+console.log('-----------------------');
+console.log('------12-UZDUOTIS-------');
+//12. Į kortelių skyrelį pridėti mokėjimo kortelių 'MasterCard', 'Visa' (su rand generuokite atsitiktines reikšmes 'MasterCard' arba 'Visa' ir rašykite į masyvą) iš skirtingų bankų tiek, kad skyrelis (masyvo ilgis) pasidarytų lygus 20;
+
+const korteliuKiekis = 20 - pinigineNew[2].length;
+console.log(korteliuKiekis);
+const naujosKorteles = [...Array(korteliuKiekis)].map(_ => kuriamKorteles());
+console.log(naujosKorteles);
