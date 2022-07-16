@@ -165,12 +165,19 @@ console.log('------------------------');
 console.log('------16-UZDUOTIS-------');
 //16. Į piniginės popierinių pinigų skyrelį įdėti 500 pinigų mažom kupiūrom ( generuoti atsitiktinius skaičius nuo 3 iki 10 ir dėti kaip naujus elementus, kol įdėta suma bus lygi 500);
 
+// console.log('Naujas pinigas:', naujasPinigas);
 console.log('Popieriniu pinigu skyrius:', pinigineNew[1].reduce((a, b)=> a + b));
-
-const pilnaPinigine = pinigineNew[1].reduce((a, b) => a + b);
-console.log(pilnaPinigine);
-
-
+const arrrr = pinigineNew[1];
+console.log(arrrr);
+let summa = 0;
+for(let i = 0; i < arrrr.length; i++){
+    if(summa !== 500){
+        pinigineNew[1].push(rand(3, 10)); 
+        summa += arrrr[i];
+        
+    }
+}
+console.log(summa);
 
 console.log('------------------------');
 console.log('------17-UZDUOTIS-------');
@@ -194,5 +201,3 @@ console.log('Isrusiota pagal zodziu ilgi:', pinigineNew[4].sort((a, b) => {
 console.log('------------------------');
 
 
-
-    
