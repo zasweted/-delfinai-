@@ -6,7 +6,7 @@ function rand(min, max) {
 };
 
 function kuriamKorteles(){
-    const raides = ['MasterCard Visa', 'Visa'];
+    const raides = ['MasterCard', 'Visa'];
     const randomRaide = raides[Math.floor(Math.random() * raides.length)];
     return randomRaide;
 
@@ -102,7 +102,7 @@ const pinigineNew = [];
 pinigineNew.push(monetos, kupiuros);
 console.log(pinigineNew);
 
-console.log('-----------------------');
+console.log('------------------------');
 console.log('------10-UZDUOTIS-------');
 //10. Į 9 uždavinio masyvą, piniginę su dviem skyreliais, pridėti trečią skyrelį- masyvą su kortelėm: ['KIKA', 'Euro Vaistinė', 'Drogas', 'Ačiū', 'Lietuvos Geležinkeliai', 'Mano RIMI'];
 
@@ -111,7 +111,7 @@ pinigineNew.push(korteles);
 console.log(pinigineNew);
 
 
-console.log('-----------------------');
+console.log('------------------------');
 console.log('------11-UZDUOTIS-------');
 
 //11. Korteles skyrelyje sudėlioti (išrūšiuoti) pagal abėcėlę;
@@ -121,11 +121,42 @@ pinigineNew[2].sort((a, b) =>{
 } );
 console.log('Korteles surusiotos pagal abecele:', pinigineNew[2]);
 
-console.log('-----------------------');
+console.log('------------------------');
 console.log('------12-UZDUOTIS-------');
 //12. Į kortelių skyrelį pridėti mokėjimo kortelių 'MasterCard', 'Visa' (su rand generuokite atsitiktines reikšmes 'MasterCard' arba 'Visa' ir rašykite į masyvą) iš skirtingų bankų tiek, kad skyrelis (masyvo ilgis) pasidarytų lygus 20;
 
 const korteliuKiekis = 20 - pinigineNew[2].length;
-console.log(korteliuKiekis);
 const naujosKorteles = [...Array(korteliuKiekis)].map(_ => kuriamKorteles());
-console.log(naujosKorteles);
+console.log('Naujos korteles:', naujosKorteles);
+naujosKorteles.forEach(a => pinigineNew[2].push(a));
+
+console.log('Papilditas korteliu skyrius:', pinigineNew[2].length, pinigineNew[2]);
+
+
+console.log('------------------------');
+console.log('------13-UZDUOTIS-------');
+//13. Paskaičiuokite, kokio tipo kortelių ('MasterCard' arba 'Visa') yra daugiau;
+const x1 = [];
+const x2 = [];
+
+
+pinigineNew[2].forEach(a => {
+    if (a == 'MasterCard') return x1.push(1)
+    if (a == 'Visa') return x2.push(1)
+});
+console.log('MasterCard kiekis:', x1.length, 'Visa kiekis:', x2.length);
+const daugiau =  x1 > x2 ? console.log('MasterCard yra daugiau') : console.log('Visa yra daugiau');
+
+console.log('------------------------');
+console.log('------14-UZDUOTIS-------');
+//14. Sukurkite masyve (piniginėje) ketvirtą elementą (skyrelį) į kurį įdėkite 10 loterijos bilietų, kurių numerius sugeneruokite atsitiktinai su rand funkcija nuo 1000000000 iki 9999999999;
+
+pinigineNew.push([...Array(10)].map(_ => rand(1000000000, 9999999999)));
+console.log('Loterijos bilietu numeriai:', pinigineNew[3]);
+
+console.log('------------------------');
+console.log('------15-UZDUOTIS-------');
+//15. Loterijos bilietų masyvą išrūšiuoti nuo didžiausio numerio iki mažiausio;
+
+
+    
