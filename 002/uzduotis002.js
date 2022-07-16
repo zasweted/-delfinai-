@@ -167,3 +167,23 @@ console.log('------7-UZDUOTIS-------');
 
 const newUniqArr2 = uniqArr1.filter(a => uniqArr2.indexOf(a) !== -1); // kodel taip veikia??
 console.log('Naujas masyvas:', newUniqArr2.length, newUniqArr2);
+
+console.log('-----------------------');
+console.log('------8-UZDUOTIS-------');
+
+// 8. Sugeneruokite masyvą, kurio indeksus sudarytų pirmo 5 uždavinio masyvo reikšmės, o jo reikšmės iš būtų antrojo masyvo.
+
+
+
+console.log('-----------------------');
+console.log('------9-UZDUOTIS-------');
+
+//9. Sugeneruokite 10 skaičių masyvą pagal taisyklę: Du pirmi skaičiai- atsitiktiniai nuo 5 iki 25. Trečias, pirmo ir antro suma. Ketvirtas- antro ir trečio suma. Penktas trečio ir ketvirto suma ir t.t.
+
+const lastArr = [...Array(2)].map(_ => rand(5, 25));
+console.log('Pradiniai 2 skaiciai:', lastArr);
+
+for (let i = 2;i < 10; i++){
+   lastArr[i] = lastArr[i - 2] + lastArr[i - 1]; 
+};
+console.log('Fibonacci sequence:', lastArr);
