@@ -61,3 +61,29 @@ const moneyAdd = moneySpent.map((a, i) => {
     if(a === 0) return i;
 });
 console.log('Nuliai pakeisi i nulio indexa:', moneyAdd);
+
+console.log('-----------------------');
+console.log('------7-UZDUOTIS-------');
+//7. Į 1 uždavinio masyvą pridėti tiek naujų reikšmių (pinigų, atsitiktinių skaičių nuo 0 iki 10), kad masyvo ilgis būtų lygiai 30;
+
+console.log('Originali pinigine:', pinigine.length, pinigine);
+const newArrLength = 30 - pinigine.length;
+const pinigine2 = [...Array(newArrLength)].map(_ => rand(0, 10));
+console.log('Nauja pinigine:', pinigine2.length, pinigine2);
+pinigine2.forEach(a => pinigine.push(a));
+console.log('Papildita pinigine:', pinigine.length, pinigine);
+
+
+console.log('-----------------------');
+console.log('------8-UZDUOTIS-------');
+//8. Naudojant 1 uždavinio masyvą iš jo reikšmių sukurti dar du papildomus masyvus. Į vieną iš 1 uždavinio masyvo pridėti reikšmes mažesnes arba lygias 2 (monetas), o į kitą didesnes nei 2 (popierinius pinigus);
+
+const monetos =[];
+const kupiuros = [];
+pinigine.forEach(a => {
+    if(a <= 2) return monetos.push(a);
+    if(a > 2) return kupiuros.push(a);
+});
+console.log('Kupiuros:', kupiuros.length, kupiuros);
+console.log('Monetos:', monetos.length, monetos);
+
