@@ -157,6 +157,22 @@ console.log('Loterijos bilietu numeriai:', pinigineNew[3]);
 console.log('------------------------');
 console.log('------15-UZDUOTIS-------');
 //15. Loterijos bilietų masyvą išrūšiuoti nuo didžiausio numerio iki mažiausio;
+console.log('Surusiota min - max:', pinigineNew[3].sort((a, b) => a - b));
+
+
+
+console.log('------------------------');
+console.log('------16-UZDUOTIS-------');
+//16. Į piniginės popierinių pinigų skyrelį įdėti 500 pinigų mažom kupiūrom ( generuoti atsitiktinius skaičius nuo 3 iki 10 ir dėti kaip naujus elementus, kol įdėta suma bus lygi 500);
+
+console.log('Popieriniu pinigu skyrius:', pinigineNew[1].reduce((a, b)=> a + b));
+
+const pilnaPinigine = pinigineNew[1].reduce((a, b) => a + b);
+
+do {
+    pinigineNew[1].push(rand(3, 10))
+}while (pilnaPinigine < 500)
+console.log(pilnaPinigine);
 
 
     
