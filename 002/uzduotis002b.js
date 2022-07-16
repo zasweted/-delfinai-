@@ -49,7 +49,7 @@ console.log('-----------------------');
 console.log('------5-UZDUOTIS-------');
 //5. Surasti didžiausią reikšmę 1 uždavinio masyve ir paskaičiuoti kiek tokių didžiausių reikšmių masyve yra;
 
-const didziausiaReiksme = pinigine.sort((a, b) => b - a);
+const didziausiaReiksme = [...pinigine].sort((a, b) => b - a);
 const ats = [];
 const didziausiuReiksmiuKiekis = pinigine.map(a => {
     if(a === didziausiaReiksme[0]) return ats.push(a);
@@ -62,7 +62,7 @@ console.log('Didziausiu reiksmiu kiekis masyve:', ats.length);
 console.log('-----------------------');
 console.log('------6-UZDUOTIS-------');
 //6. Visus masyvo elementus, kurie yra lygūs 0, pakeisti į tų elementų indeksų (vietų, numerių) reikšmes;
-
+console.log(pinigine);
 const moneyAdd = moneySpent.map((a, i) => {
     if(a !== 0) return a;
     if(a === 0) return i;
