@@ -145,7 +145,7 @@ pinigineNew[2].forEach(a => {
     if (a == 'Visa') return x2.push(1)
 });
 console.log('MasterCard kiekis:', x1.length, 'Visa kiekis:', x2.length);
-const daugiau =  x1 > x2 ? console.log('MasterCard yra daugiau') : console.log('Visa yra daugiau');
+const daugiau = x1 === x2 ? console.log('MasterCard yra tiek pat kiek Visa') : x1 > x2 ? console.log('MasterCard yra daugiau') : console.log('Visa yra daugiau');
 
 console.log('------------------------');
 console.log('------14-UZDUOTIS-------');
@@ -170,10 +170,10 @@ console.log('Popieriniu pinigu skyrius:', pinigineNew[1].reduce((a, b)=> a + b))
 const arrrr = pinigineNew[1];
 console.log(arrrr);
 let summa = 0;
-for(let i = 0; i < arrrr.length; i++){
-    if(summa !== 500){
-        pinigineNew[1].push(rand(3, 10)); 
+for(let i = 0; i < 500; i++){
+    if(summa !== 500 && summa <= 500){
         summa += arrrr[i];
+        pinigineNew[1].push(rand(3, 10)); 
         
     }
 }
@@ -199,5 +199,8 @@ console.log('Isrusiota pagal zodziu ilgi:', pinigineNew[4].sort((a, b) => {
     if(a.length < b.length) return -1;
 }));
 console.log('------------------------');
+
+
+//16 uzduotis kaip ispresti
 
 

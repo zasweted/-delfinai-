@@ -8,6 +8,7 @@
     "uzduotis001": "nodemon ./001/uzduotis001.js",
     "uzduotis002": "nodemon ./002/uzduotis002.js",
     "uzduotis002b": "nodemon ./002/uzduotis002b.js",
+    "uzduotis002c": "nodemon ./002/uzduotis002c.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

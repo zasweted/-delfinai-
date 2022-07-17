@@ -119,10 +119,10 @@ for(let i = 0; i < 200; i++){ //paklaust kodel!!
     array4.push(array1[i] + array2[i] + array3[i]);
 };
 
-console.log(array4);
+console.log('Original arr:', array4.length, array4);
 
-const array5 = new Set(array4)
-console.log(array5);
+const array5 = [...new Set(array4)].sort();
+console.log('Unikalus:', array5.length, array5);
 
 console.log('-----------------------');
 console.log('------5-UZDUOTIS-------');
