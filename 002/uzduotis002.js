@@ -118,11 +118,18 @@ const array4 = [];
 for(let i = 0; i < 200; i++){ //paklaust kodel!!
     array4.push(array1[i] + array2[i] + array3[i]);
 };
-
+const array5 = [...array4].sort((a, b) => {
+    if(a > b) return 1;
+    if(a < b) return -1;
+});
 console.log('Original arr:', array4.length, array4);
+console.log('Sorted:', array5.length,  array5);
 
-const array5 = [...new Set(array4)].sort();
-console.log('Unikalus:', array5.length, array5);
+const arrayz5 = [...new Set(array4)].sort();
+console.log('Unikalus:', arrayz5.length, arrayz5);
+// ne tai ko reikia :D
+
+
 
 console.log('-----------------------');
 console.log('------5-UZDUOTIS-------');
