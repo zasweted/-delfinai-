@@ -179,7 +179,9 @@ console.log('-----------------------');
 console.log('------8-UZDUOTIS-------');
 
 // 8. Sugeneruokite masyvą, kurio indeksus sudarytų pirmo 5 uždavinio masyvo reikšmės, o jo reikšmės iš būtų antrojo masyvo.
-
+unikalusMasyvas1[101]='fjjf'
+console.log(unikalusMasyvas1)
+console.log(unikalusMasyvas2)
 
 
 console.log('-----------------------');

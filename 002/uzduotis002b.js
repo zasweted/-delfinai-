@@ -167,17 +167,19 @@ console.log('------16-UZDUOTIS-------');
 
 // console.log('Naujas pinigas:', naujasPinigas);
 console.log('Popieriniu pinigu skyrius:', pinigineNew[1].reduce((a, b)=> a + b));
-const arrrr = pinigineNew[1];
+const arrrr = pinigineNew[1].reduce((a, b)=> a + b);
 console.log(arrrr);
+
+
+
 let summa = 0;
-for(let i = 0; i < 500; i++){
-    if(summa !== 500 && summa <= 500){
-        summa += arrrr[i];
-        pinigineNew[1].push(rand(3, 10)); 
-        
-    }
+ while (summa < 500 ) {
+    summa = summa + rand(3, 10)
 }
+
 console.log(summa);
+
+
 
 console.log('------------------------');
 console.log('------17-UZDUOTIS-------');
