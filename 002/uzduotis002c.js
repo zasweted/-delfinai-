@@ -38,8 +38,12 @@ console.log(owners);
 
 let i1 = 1;
 let i0 = 0;
-let catOwners = [...Array(10)].map(_ => `${owners[i1++]} has ${cats[i0++]}`);
+let catOwners = [...Array(10)].map(_ => `${owners[i1++]} has ${cats[i0++]} cats`);
 console.log(catOwners);
 
-// console.log(`${owners[1]} has ${cats[0]} cats`);
+//5. Suraskite vieną (tik vieną) vardą owners masyve, kuris kartojasi (nesvarbu kiek kartų) ir jį atspausdinkite su console.log().
+const x = owners.filter(a => {
+    if(a >) return a;
+});
+console.log(x);
 
