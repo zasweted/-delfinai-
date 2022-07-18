@@ -44,9 +44,6 @@ console.log(catOwners);
 //5. Suraskite vieną (tik vieną) vardą owners masyve, kuris kartojasi (nesvarbu kiek kartų) ir jį atspausdinkite su console.log().
 const x = owners.sort();
 const ownersDublikatas = [];
-x.forEach((a, i) => {
-    if( a[i] == a[i+1]) return ownersDublikatas.push(a);
-});
-console.log(x);
 
 
+//5 uzdotis

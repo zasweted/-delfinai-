@@ -29,33 +29,35 @@ console.log('a) Reiksmiu kiekis didesniu uz 10:', daugiauUzDesimt.length);
 const didziausiasMasyve = masyvas.reduce((a, b)=> a > b ? a : b);
 console.log('b) Didziausias masyve:', didziausiasMasyve);
 
-const index = masyvas.indexOf(didziausiasMasyve);
-console.log('c) Didziausio masyve indexas:', index);
 
-const lyginiaiIndexai =  masyvas.map((a, i) => {
+console.log('b) Didziausio masyve indexas:', masyvas.indexOf(didziausiasMasyve));
+
+const lyginiaiIndexai =  masyvas.map((_, i) => {
     if(i % 2 == 0) {
         return i
     }
     
 }).filter(a => a);
+//console.log(masyvas.filter((_, i) => i % 2 === 0).reeduce((a, b) => a + b));
 const lyginiuIndexuSuma = lyginiaiIndexai.reduce((a, b)=> a + b);
-console.log('d) Lyginiu indexu suma:', lyginiuIndexuSuma);
+console.log('c) Lyginiu indexu suma:', lyginiuIndexuSuma);
 
 const naujasMasyvas = masyvas.map((a, b) => a - b);
 console.log('d) Naujas masyvas(reiksme - indexas):', naujasMasyvas);
 
 const antrasMasyvas = [...Array(10)].map(_ => rand(5, 25));
-
+//masyvas.push(...[...Array(10)].map(_ => rand(5, 25)));
 const sujungtasMasyvas = masyvas.concat(antrasMasyvas);
 console.log('e)Masyvas papilditas 10 elementu:', sujungtasMasyvas);
 
 const poriniai = [];
 const neporiniai = [];
 
-sujungtasMasyvas.forEach((el, idx) => {
-    if (idx % 2 == 0) return poriniai.push(el);
-    if (idx % 2 !== 0) return neporiniai.push(el)
+sujungtasMasyvas.forEach((a, i) => {
+    if (i % 2 == 0) return poriniai.push(a);
+    if (i % 2 !== 0) return neporiniai.push(a)
 });
+// const [a, b] = [masyvas.filter((_, i) => i % 2 === 0),masyvas.filter((_, i) => i % 2 !== 0)];
 console.log('f) Poriniai:', poriniai);    
 console.log('f) Neporiniai:', neporiniai);    
 
@@ -66,7 +68,7 @@ const pakeistasPirminisMasyvas = masyvas.map((a, i) => {
 
 console.log('g) Pirmimnio masyvo elementai su poriniais indexais, kurie > 15, pakeisti i 0:', pakeistasPirminisMasyvas);
 
-const maziausiasIndex = [];
+let maziausiasIndex = [];
 masyvas.forEach((a, i)=> {
     if(a > 10){
         maziausiasIndex.push(i);
@@ -115,7 +117,7 @@ const array3 = [...Array(200)].map(_ => kuriamRandomRaide());
 
 
 const array4 = [];
-for(let i = 0; i < 200; i++){ //paklaust kodel!!
+for(let i = 0; i < 200; i++){ 
     array4.push(array1[i] + array2[i] + array3[i]);
 };
 const array5 = [...array4].sort((a, b) => {
@@ -127,7 +129,7 @@ console.log('Sorted:', array5.length,  array5);
 
 const arrayz5 = [...new Set(array4)].sort();
 console.log('Unikalus:', arrayz5.length, arrayz5);
-// ne tai ko reikia :D
+
 
 
 
@@ -196,3 +198,5 @@ for (let i = 2;i < 10; i++){
    lastArr[i] = lastArr[i - 2] + lastArr[i - 1]; 
 };
 console.log('Fibonacci sequence:', lastArr);
+// 4 uzdotis
+// 8 uzdotis
