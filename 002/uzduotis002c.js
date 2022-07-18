@@ -42,8 +42,10 @@ let catOwners = [...Array(10)].map(_ => `${owners[i1++]} has ${cats[i0++]} cats`
 console.log(catOwners);
 
 //5. Suraskite vieną (tik vieną) vardą owners masyve, kuris kartojasi (nesvarbu kiek kartų) ir jį atspausdinkite su console.log().
-const x = owners.sort();
+
 const ownersDublikatas = [];
-
-
+owners.filter((a, i) => {
+    if(owners.indexOf(a) !== owners.lastIndexOf(a)) return ownersDublikatas.push(a);
+});
+console.log('Vardas kuris kartuojasi:', ownersDublikatas[0]);
 //5 uzdotis
