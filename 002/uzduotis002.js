@@ -106,6 +106,12 @@ console.log('B raidziu kiekis:', b.length);
 console.log('C raidziu kiekis:', c.length);
 console.log('D raidziu kiekis:', d.length);
 
+// const raides = [...Array(200)].map(_ => ['A', 'B', 'C', 'D'][rand(0, 3)]);
+// const rez = { A: 0, B: 0, C: 0, D: 0 };
+// raidziuMasyvas.forEach(a => rez[a]++);
+// console.log(raidziuMasyvas); 
+// console.log(rez); 
+
 console.log('-----------------------');
 console.log('------4-UZDUOTIS-------');
 
@@ -133,6 +139,8 @@ console.log('Unikalus:', arrayz5.length, arrayz5);
 
 
 
+
+
 console.log('-----------------------');
 console.log('------5-UZDUOTIS-------');
 // 5. Sugeneruokite du masyvus, kurių reikšmės yra atsitiktiniai skaičiai nuo 100 iki 999. Masyvų ilgiai 100. Masyvų reikšmės turi būti unikalios savo masyve (t.y. neturi kartotis).
@@ -143,7 +151,7 @@ while (unikalusMasyvas1.length < 100) {
     unikalusMasyvas1.push(x);
   }
 };
-console.log('Ilgis:', unikalusMasyvas1.length);
+console.log('Masyvas A, Ilgis:', unikalusMasyvas1.length);
 console.log(unikalusMasyvas1);
 
 const unikalusMasyvas2 = [];
@@ -153,9 +161,12 @@ while (unikalusMasyvas2.length < 100) {
         unikalusMasyvas2.push(y);
     }
 };
-console.log('Ilgis:', unikalusMasyvas2.length);
+console.log('Masyvas B, Ilgis:', unikalusMasyvas2.length);
 console.log(unikalusMasyvas2);
-
+// const uniq1 = new Set();
+// while(uniq1.size < 100){
+//     uniq1add(rand(100, 999))
+// }
 console.log('-----------------------');
 console.log('------6-UZDUOTIS-------');
 
@@ -163,8 +174,8 @@ console.log('------6-UZDUOTIS-------');
 
 const uniqArr1 = [...unikalusMasyvas1].sort((a, b) => a - b); //sort nebutinas
 const uniqArr2 = [...unikalusMasyvas2].sort((a, b) => a - b);
-console.log(uniqArr1);
-console.log(uniqArr2);
+console.log('Masyvas A isrusiotas:', uniqArr1);
+console.log('Masyvas B isrusiotas:', uniqArr2);
 
 const newUniqArr = uniqArr1.filter(a => uniqArr2.indexOf(a) === -1); // kodel taip veikia??
 console.log('Naujas masyvas:', newUniqArr.length, newUniqArr);

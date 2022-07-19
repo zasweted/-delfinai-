@@ -32,7 +32,7 @@ console.log('Suma katinu kurie dalijasi is 3:', catsDivide.reduce((a, b)=> a + b
 
 //3. Į masyvo owners pradžią, t.y. elementą su indeksu 0 (o ne galą!, o pridėkite papildomai, o neužrašykite ant mergaitės!) pridėkite vardą 'Nausėda'. Masyvas po pridėjimo turi turėti 11 elementų;
 owners.unshift('Nausėda')
-console.log(owners);
+console.log([...owners]);
 
 //4. Sukurkite trečią masyvą catOwners, kurio reikšmė yra stringas, sudarytas iš vardo ir katinukų skaičiaus (pvz Deimantė has 2 cats), naudodami masyvus cats ir owners pagal taisyklę: pirmai mergaitei iš owners masyvo priskiriamas pirmas katinukų skaičius iš cats masyvo, antrai - antras ir t.t. Atkreipkite dėmesį, kad pirma mergaitė owners masyve yra ne pirmas elementas su indeksu 0 (pirmas yra 'Nausėda'), o antrasis su indeksu 1. Pirmas katinukų skaičius cats masyve yra standartiškai su indeksu 0. Masyvą atspausdinkite su console.log();
 
@@ -44,7 +44,7 @@ console.log(catOwners);
 //5. Suraskite vieną (tik vieną) vardą owners masyve, kuris kartojasi (nesvarbu kiek kartų) ir jį atspausdinkite su console.log().
 
 const ownersDublikatas = [];
-owners.filter((a, _) => {
+owners.filter(a => {
     if(owners.indexOf(a) !== owners.lastIndexOf(a)) return ownersDublikatas.push(a);
 });
 console.log('Vardas kuris kartuojasi:', ownersDublikatas[0]);
