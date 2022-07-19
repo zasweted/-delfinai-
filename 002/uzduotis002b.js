@@ -172,12 +172,13 @@ console.log(arrrr);
 
 
 
+
 let summa = 0;
  while (summa < 500 ) {
     summa = summa + rand(3, 10)
 }
-
 console.log(summa);
+
 
 
 

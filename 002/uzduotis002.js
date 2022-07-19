@@ -161,8 +161,8 @@ console.log('------6-UZDUOTIS-------');
 
 //6. Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, kurios yra pirmame 5 uždavinio masyve, bet nėra antrame 5 uždavinio masyve.
 
-const uniqArr1 = unikalusMasyvas1.sort((a, b) => a - b); //sort nebutinas
-const uniqArr2 = unikalusMasyvas2.sort((a, b) => a - b);
+const uniqArr1 = [...unikalusMasyvas1].sort((a, b) => a - b); //sort nebutinas
+const uniqArr2 = [...unikalusMasyvas2].sort((a, b) => a - b);
 console.log(uniqArr1);
 console.log(uniqArr2);
 
@@ -181,9 +181,13 @@ console.log('-----------------------');
 console.log('------8-UZDUOTIS-------');
 
 // 8. Sugeneruokite masyvą, kurio indeksus sudarytų pirmo 5 uždavinio masyvo reikšmės, o jo reikšmės iš būtų antrojo masyvo.
-unikalusMasyvas1[101]='fjjf'
-console.log(unikalusMasyvas1)
-console.log(unikalusMasyvas2)
+
+let uniqArr3 = [...Array(uniqArr1[uniqArr1.length -1])];
+uniqArr1.forEach((n, i) => uniqArr3[n] = uniqArr2[i]);
+
+
+console.log('BIG masyvas:', uniqArr3);
+
 
 
 console.log('-----------------------');
