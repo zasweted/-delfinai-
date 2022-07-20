@@ -19,14 +19,14 @@ class Kibiras1 {
 
     prideti1Akmeni(){
         this.akmenuKiekis++
-        console.log(`${this.name} ${this.type} turi ${this.akmenuKiekis} akmenis(u).`);
+        console.log();
         return this;
     }
 
     pridetiDaugAkmenu(kiekis){
         this.kiekis = this.kiekis + kiekis;
         this.akmenuKiekis = this.akmenuKiekis + this.kiekis;
-        console.log(`${this.name} ${this.type} turi ${this.akmenuKiekis} akmeni(u).`);
+        console.log();
         return this;
     }
 
