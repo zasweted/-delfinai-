@@ -7,4 +7,34 @@ console.clear();
 //-------------
 //4. (STATIC) Sukurti metodą keleiviuSkaiciusVisuoseTroleibusuose(), kuris rodytų bendrą keleivių skaičių visuose Troleibusas objektuose. Bendram kelevių skaičiaus skaičiavimui sukurkite statinį metodą bendrasKeleiviuSkaicius(keleiviuSkaicius), kuris pridėtų arba atimtų keleivius iš statinės savybės visiKeleiviai (kurioje yra įrašytas bendras keleivių skaičius). Taip pat atitinkamai modifikuokite metodus ilipa(keleiviuSkaicius) ir islipa(keleiviuSkaicius).
 //--------------
-//5. (MAP) Sukurti klasę PirkiniuKrepselis. Konstruktoriuje sukurti savybę turinys, kuri yra Map tipo objektas. Sukurti tris metodus: idetiSureli(kiekis), idetiPieno(kiekis), idetiDuonos(kiekis). Parašyti metodą krepselioTurinys(), kuris į konsolę išvestų produktų sąrašą
+//5. (MAP) Sukurti klasę PirkiniuKrepselis. Konstruktoriuje sukurti savybę turinys, kuri yra Map tipo objektas. Sukurti tris metodus: idetiSureli(kiekis), idetiPieno(kiekis), idetiDuonos(kiekis). Parašyti metodą krepselioTurinys(), kuris į konsolę išvestų produktų sąrašą.
+
+class Kibiras1 {
+    constructor (name, type) {
+        this.name = name;
+        this.type = type;
+        this.kiekis = 0;
+        this.akmenuKiekis = 0;
+    }
+
+    prideti1Akmeni(){
+        this.akmenuKiekis++
+        console.log(`${this.name} ${this.type} turi ${this.akmenuKiekis} akmenis(u).`);
+        return this;
+    }
+
+    pridetiDaugAkmenu(kiekis){
+        this.kiekis = this.kiekis + kiekis;
+        this.akmenuKiekis = this.akmenuKiekis + this.kiekis;
+        console.log(`${this.name} ${this.type} turi ${this.akmenuKiekis} akmeni(u).`);
+        return this;
+    }
+
+    kiekPririnktaAkmenu(){
+        this.akmenuKiekis;
+        return this;
+    }
+}
+
+let spizinisKibiras = new Kibiras1('spizinis', 'kibiras');
+spizinisKibiras.prideti1Akmeni().pridetiDaugAkmenu(15).kiekPririnktaAkmenu();
