@@ -136,6 +136,11 @@ console.log('Sorted:', array5.length,  array5);
 const arrayz5 = [...new Set(array4)].sort();
 console.log('Unikalus:', arrayz5.length, arrayz5);
 
+const uniqArr5 = array5.filter((a, i) => {
+    return array5.indexOf(a) === array5.lastIndexOf(a)
+});
+console.log('Unikalus, unikalus :', uniqArr5);
+
 
 
 
