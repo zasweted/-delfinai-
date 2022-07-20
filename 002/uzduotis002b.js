@@ -168,20 +168,30 @@ console.log('------16-UZDUOTIS-------');
 // console.log('Naujas pinigas:', naujasPinigas);
 console.log('Popieriniu pinigu skyrius:', pinigineNew[1].reduce((a, b)=> a + b));
 const arrrr = pinigineNew[1].reduce((a, b)=> a + b);
-console.log(arrrr);
+
+
 
 
 
 
 let summa = 0;
- while (summa < 500 ) {
+ while (summa < 484 ) {
     summa = summa + rand(3, 10)
 }
-console.log(summa);
 
-
-
-
+while(summa < 513) {
+    let x = rand(3, 10);
+    let y = rand(3, 10);
+    let answ = summa + x + y;
+    if((summa + x + y) === 500){
+    console.log('Atsakymas:', answ);
+        break;
+    }else{
+        continue;
+    };
+        
+};
+    
 console.log('------------------------');
 console.log('------17-UZDUOTIS-------');
 //17. Patikrinti ar ką nors laimėjote. Bilieto numerius dalinkite iš 777 ir jeigu numeris išsidalins be liekanos - jūs laimėjote! Suskaičiuokite, kiek buvo laimingų bilietų.
