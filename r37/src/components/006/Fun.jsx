@@ -1,16 +1,17 @@
 import { useState } from "react";
-
-function Fun({spalva}){
+// const btn = {padding: '15px 40px', borderRadius: '50%'}
+function Fun({spalva, setCount}){
 
 
     const [bg, setBg] = useState('green');
     const changeB = () => {
         setBg(b => b === 'green' ? 'crimson' : 'green');  
     };
-    const [count, setCount] = useState(0);
+    
     const addOne = () => {
         setCount(c => c + 1)
-    }
+    };
+    
 
     return(
         <>
@@ -18,7 +19,7 @@ function Fun({spalva}){
             color: spalva,
             backgroundColor: bg,
             
-        }}>FUN {count}</h2>
+        }}>FUN</h2>
         <button onClick={changeB}>Change Color</button>
         <button onClick={addOne}>Click Me</button>
         </>
