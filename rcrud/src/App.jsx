@@ -1,11 +1,12 @@
+import './bootstrap.css';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import './App.scss';
-import './bootstrap.css';
 import Create from './Components/Create';
+import Edit from './Components/Edit';
 import List from './Components/List';
 import AnimalsContext from './Context/AnimalsContext';
-import { create, read } from './Functions/localStorage';
+import { create, destroy, read } from './Functions/localStorage';
 const keyLock = 'myFantasticZoo';
 
 const animalTypes = [
@@ -19,9 +20,12 @@ const animalTypes = [
 
 function App() {
 
-  const [lastUpdate, setLastUpdate] = useState(Date.now())
+  const [modalData, setModalData] = useState(null);
+
+  const [lastUpdate, setLastUpdate] = useState(Date.now());
 
   const [createData, setCreateData] = useState(null);
+  const [deleteData, setDeleteData] = useState(null);
   const [animals, setAnimals] = useState(null);
 
   useEffect(() => {
@@ -37,11 +41,22 @@ function App() {
     setLastUpdate(Date.now())
   }, [createData]);
 
+  useEffect(() => {
+    if(null === deleteData) {
+      return;
+    }
+    destroy(keyLock, deleteData);
+    setLastUpdate(Date.now())
+  }, [deleteData]);
+
   return (
     <AnimalsContext.Provider value={{
       animalTypes,
       setCreateData,
-      animals
+      animals,
+      setDeleteData,
+      modalData,
+      setModalData
     }}>
     <div className="container">
       <div className="row">
@@ -50,9 +65,11 @@ function App() {
         </div>
         <div className="col-8">
           <List/>
+          <Edit/>
         </div>
       </div>
     </div>
+    
     </AnimalsContext.Provider>
 
   );

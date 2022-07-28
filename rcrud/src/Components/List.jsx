@@ -14,7 +14,7 @@ function List() {
             }} className="card">
                 <h5 className="card-header">List Of Animals</h5>
                 <div className="card-body">
-                    <ul class="list-group">
+                    <ul className="list-group">
                         {
                             animals?.map(a => <Line key={a.id} data={a}></Line>)
                         }
