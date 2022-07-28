@@ -4,8 +4,14 @@ import AnimalsContext from "../Context/AnimalsContext";
 
 function Create() {
 
-    const { animalTypes } = useContext(AnimalsContext)
+    const { animalTypes, setCreateData } = useContext(AnimalsContext)
     const [type, setType] = useState(1)
+    const [weight, setWeight] = useState('')
+    const buttonClick = () =>{
+        setCreateData({type, weight: parseFloat(weight)});
+        setType(5);
+        setWeight('')
+    }
     return (
 
         <div style={{
@@ -25,7 +31,7 @@ function Create() {
                 <small className="form-text text-muted">Please, enter your animal weigth in kg`s. here.</small>
             </div>
             </div>
-            <button type="button" className="btn btn-danger">Add This Animal</button>
+            <button onClick={buttonClick} type="button" className="btn btn-danger">Add This Animal</button>
         </div>
 
     );

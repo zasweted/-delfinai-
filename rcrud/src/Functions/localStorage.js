@@ -1,4 +1,4 @@
-const key = 'myFantasticZoo';
+
 
 export function getId(key){
     let id = localStorage.getItem(key + '_id');
