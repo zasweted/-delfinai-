@@ -10,7 +10,7 @@ function Create() {
     const buttonClick = () =>{
         setCreateData({type, weight: parseFloat(weight)});
         setType(5);
-        setWeight('')
+        setWeight('');
     }
     return (
 
@@ -27,7 +27,7 @@ function Create() {
                 </select>
             <div className="form-group">
                 <label>How Much Is The {animalTypes.find(a => a.id == type).type}?</label>
-                <input type="number" className="form-control"></input>
+                <input type="number" className="form-control" value={weight} onChange={e => setWeight(e.target.value)}></input>
                 <small className="form-text text-muted">Please, enter your animal weigth in kg`s. here.</small>
             </div>
             </div>

@@ -3,8 +3,9 @@ import { useState } from 'react';
 import './App.scss';
 import './bootstrap.css';
 import Create from './Components/Create';
+import List from './Components/List';
 import AnimalsContext from './Context/AnimalsContext';
-import { create } from './Functions/localStorage';
+import { create, read } from './Functions/localStorage';
 const keyLock = 'myFantasticZoo';
 
 const animalTypes = [
@@ -18,7 +19,14 @@ const animalTypes = [
 
 function App() {
 
+  const [lastUpdate, setLastUpdate] = useState(Date.now())
+
   const [createData, setCreateData] = useState(null);
+  const [animals, setAnimals] = useState(null);
+
+  useEffect(() => {
+    setAnimals(read(keyLock))
+  }, [lastUpdate]);
 
 
   useEffect(() => {
@@ -26,12 +34,14 @@ function App() {
       return;
     }
     create(keyLock, createData);
+    setLastUpdate(Date.now())
   }, [createData]);
 
   return (
     <AnimalsContext.Provider value={{
       animalTypes,
-      setCreateData
+      setCreateData,
+      animals
     }}>
     <div className="container">
       <div className="row">
@@ -39,6 +49,7 @@ function App() {
           <Create/>
         </div>
         <div className="col-8">
+          <List/>
         </div>
       </div>
     </div>
